@@ -7,7 +7,7 @@ namespace ConsoleAppFour
         static void Main(string[] args)
         {
             Person person = new Person("Erik","Aggfelt");
-            Console.WriteLine(person.FullName);
+            Console.WriteLine(person.Details());
         }
     }
 }

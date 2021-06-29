@@ -9,8 +9,8 @@ namespace ConsoleAppFour
     {
 
         private readonly int id;
-        string firstName;
-        string lastName;
+        private string firstName;
+        private string lastName;
 
         public string FirstName
         {
@@ -43,6 +43,7 @@ namespace ConsoleAppFour
 
         public Person(string firstName, string lastName)
         {
+            
             FirstName = firstName;
             LastName = lastName;
         }
