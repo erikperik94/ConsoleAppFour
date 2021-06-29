@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ConsoleAppFour;
 
 namespace ConsoleAppFour
 {
     public class Person
     {
+        static int idCounter = 0;
+        public static int Counter { get { return idCounter; } }
 
         private readonly int id;
         private string firstName;
         private string lastName;
+
+        public int Id { get { return id; } }
 
         public string FirstName
         {
@@ -21,9 +24,7 @@ namespace ConsoleAppFour
                 {
                     throw new ArgumentException("Empty or only whitespace is not allowed.");
                 }
-
                 firstName = value;
-
             }
         }
         public string LastName
@@ -35,7 +36,6 @@ namespace ConsoleAppFour
                 {
                     throw new ArgumentException("Empty or only whitespace is not allowed.");
                 }
-
                 lastName = value;
             }
         }
@@ -43,14 +43,14 @@ namespace ConsoleAppFour
 
         public Person(string firstName, string lastName)
         {
-            
+            id = ++idCounter;
             FirstName = firstName;
             LastName = lastName;
         }
 
         public string Details()
         {
-            return $"{FullName}";
+            return $"Name: {FullName} Your id: {id}";
         }
 
     }
