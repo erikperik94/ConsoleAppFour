@@ -4,33 +4,32 @@ using System.Text;
 
 namespace ConsoleAppFour
 {
-    public class PersonSequencer
+    public class TodoSequencer
     {
         static int idCounter = 0;
         public int IdCounter { get { return idCounter; } }
 
         private static int personId;
         public int PersonId { get { return personId; } }
-        static int nextPersonId()
+        static int nextTodoId()
         {
             personId = ++idCounter;
             return personId;
         }
-        static int resetPerson()
+        static int resetTodo()
         {
             idCounter = 0;
-
             return idCounter;
         }
-        public int ResetPerson()
+        public int ResetTodo()
         {
-            return resetPerson();
+            return resetTodo();
         }
-        public int NextPersonId()
+        public int NextTodoId()
         {
-            return nextPersonId();
+            return nextTodoId();
         }
-        public PersonSequencer()
+        public TodoSequencer()
         {
 
         }
