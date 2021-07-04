@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleAppFour.Data;
+using ConsoleAppFour.Model;
 
 namespace ConsoleAppFour.Data
 {
-    class TodoItems
+    public class TodoItems
     {
         private static Todo[] itemsArray = new Todo[0];
 
@@ -22,7 +24,7 @@ namespace ConsoleAppFour.Data
             Todo findTodo = Array.Find(itemsArray, id => id.TodoId == todoId);
             return findTodo;
         }
-        public Todo AddPerson(string description)
+        public Todo AddTodo(string description)
         {
             Todo newTodo = new Todo(TodoSequencer.NextTodoId(), description);
             Array.Resize(ref itemsArray, Size() + 1);
@@ -32,7 +34,7 @@ namespace ConsoleAppFour.Data
         public void Clear()
         {
             Array.Resize(ref itemsArray, 0);
-            PersonSequencer.ResetPerson();
+            TodoSequencer.ResetTodo();
         }
     }
 }

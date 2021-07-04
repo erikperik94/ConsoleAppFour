@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleAppFour.Data;
+using ConsoleAppFour.Model;
 
-namespace ConsoleAppFour
+namespace ConsoleAppFour.Data
 {
     public class TodoSequencer
     {
