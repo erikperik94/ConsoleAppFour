@@ -6,37 +6,15 @@ namespace ConsoleAppFour
 {
     public class PersonSequencer
     {
-        static int idCounter = 0;
-        public int IdCounter { get { return idCounter; } }
-
-        private static int personId;
-        public int PersonId { get { return personId; } }
-        static int nextPersonId()
+        private static int _personId;
+        public static int NextPersonId()
         {
-            personId = ++idCounter;
-            return personId;
+            _personId = ++_personId;
+            return _personId;
         }
-        static int resetPerson()
+        public static void ResetPerson()
         {
-            idCounter = 0;
-
-            return idCounter;
-        }
-        public int ResetPerson()
-        {
-            return resetPerson();
-        }
-        public int NextPersonId()
-        {
-            return nextPersonId();
-        }
-        public PersonSequencer()
-        {
-
-        }
-        public string Details()
-        {
-            return $"{personId}";
+            _personId = 0;
         }
     }
 }

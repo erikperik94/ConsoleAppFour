@@ -8,12 +8,12 @@ namespace ConsoleAppFour
     {
 
 
-        private readonly int todoId;
+        private readonly int _todoId;
         private string description;
         private bool done;
-        private Person assigne;
+        private Person assign;
 
-        public int TodoId { get { return todoId; }  }
+        public int TodoId { get { return _todoId; }  }
 
         public string Description
         {
@@ -27,15 +27,10 @@ namespace ConsoleAppFour
                 description = value;
             }
         }
-        public Todo(int number, string description)
+        public Todo(int todoId, string description)
         {
-            todoId = number;
+            this._todoId = todoId;
             Description = description;
-        }
-
-        public string Details()
-        {
-            return $"TodoId: {todoId} Description: {Description}";
         }
 
 

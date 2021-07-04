@@ -6,36 +6,15 @@ namespace ConsoleAppFour
 {
     public class TodoSequencer
     {
-        static int idCounter = 0;
-        public int IdCounter { get { return idCounter; } }
-
-        private static int personId;
-        public int PersonId { get { return personId; } }
-        static int nextTodoId()
+        private static int _todoId = 0;
+        public static int NextTodoId()
         {
-            personId = ++idCounter;
-            return personId;
+            _todoId = ++_todoId;
+            return _todoId;
         }
-        static int resetTodo()
+        public static void ResetTodo()
         {
-            idCounter = 0;
-            return idCounter;
-        }
-        public int ResetTodo()
-        {
-            return resetTodo();
-        }
-        public int NextTodoId()
-        {
-            return nextTodoId();
-        }
-        public TodoSequencer()
-        {
-
-        }
-        public string Details()
-        {
-            return $"{personId}";
+            _todoId = 0;
         }
     }
 }

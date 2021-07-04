@@ -6,14 +6,12 @@ namespace ConsoleAppFour
 {
     public class Person
     {
-        static int idCounter = 0;
-        public static int Counter { get { return idCounter; } }
 
-        private readonly int id;
+        private readonly int _personId;
         private string firstName;
         private string lastName;
 
-        public int Id { get { return id; } }
+        public int PersonId { get { return _personId; } }
 
         public string FirstName
         {
@@ -39,20 +37,14 @@ namespace ConsoleAppFour
                 lastName = value;
             }
         }
-        public string FullName { get { return firstName + ' ' + lastName; } }
 
-        public Person(string firstName, string lastName)
+
+        public Person(string firstName, string lastName, int personId)
         {
-            id = ++idCounter;
+            this._personId = personId;
             FirstName = firstName;
             LastName = lastName;
         }
-
-        public string Details()
-        {
-            return $"Name: {FullName} Your id: {id}";
-        }
-
     }
 }
 
