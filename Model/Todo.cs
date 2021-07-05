@@ -13,7 +13,7 @@ namespace ConsoleAppFour.Model
         private readonly int _todoId;
         private string description;
         private bool done;
-        private Person assign;
+        private Person assignee;
 
         public int TodoId { get { return _todoId; }  }
 
@@ -34,7 +34,18 @@ namespace ConsoleAppFour.Model
             this._todoId = todoId;
             Description = description;
         }
+        
+        public bool Done
+        {
+            get { return done; }
+            set { done = value; }
+        }
 
-
+        public Person Assignee
+        {
+            get { return assignee; }
+            set
+            { assignee = value; }
+        }
     }
 }
