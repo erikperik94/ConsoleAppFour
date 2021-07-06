@@ -41,5 +41,17 @@ namespace ConsoleAppFour.Data
             Array.Resize(ref personArray, 0);
             PersonSequencer.ResetPerson();
         }
+        public Person[] RemovePersonPeople(Person removePerson)
+        {
+            //Find correct array index of the object
+            int removeIndex = Array.FindIndex(personArray, id => id == removePerson);
+            personArray.CopyTo(personArray, 0);
+            //Set unwanted item to null
+            personArray[removeIndex] = null;
+            //Remove every null item
+            personArray = Array.FindAll(personArray, id => id != null);
+            //return personArray;
+            return personArray;
+        }
     }
 }
