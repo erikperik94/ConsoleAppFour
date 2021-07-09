@@ -61,7 +61,6 @@ namespace ConsoleAppFour.Data
         {
             //Find correct array index of the object
             int removeIndex = Array.FindIndex(itemsArray, id => id == removeItem);
-            itemsArray.CopyTo(itemsArray, 0);
             //Set unwanted item to null
             itemsArray[removeIndex] = null;
             //Remove every null item
